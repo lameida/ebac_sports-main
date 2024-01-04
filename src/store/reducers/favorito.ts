@@ -14,10 +14,10 @@ const favoritoSlice = createSlice({
   name: 'favorito',
   initialState,
   reducers: {
-    adicionar: (state, action: PayloadAction<Produto>) => {
+    adicionar1: (state, action: PayloadAction<Produto>) => {
       const product = action.payload
 
-      if (state.itens.filter((produto) => produto.id === product.id)) {
+      if (state.itens.find((produto) => produto.id === product.id)) {
         alert('item já adicionado')
       } else {
         state.itens.push(product)
@@ -26,6 +26,6 @@ const favoritoSlice = createSlice({
   }
 })
 
-export const { adicionar } = favoritoSlice.actions
+export const { adicionar1 } = favoritoSlice.actions
 
 export default favoritoSlice.reducer
